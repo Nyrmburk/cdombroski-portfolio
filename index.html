@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no">
+    <title>Christopher Dombroski</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+	<script src="js/slideshow.js"></script>
+	<script src="js/digitsAI.js"></script>
+	<script src="js/feedforward.js"></script>
+	<script src="js/network.js"></script>
+  </head>
+  <body>
+	<div id="contents">
+		<a href="#intro">Introduction</a>
+		<a href="#robot">Robot</a>
+		<a href="#renderer">Ray Tracer</a>
+		<a href="#ai">Neural Network</a>
+		<a href="#footer">Contact</a>
+	</div>
+	<div id="intro" class="page">
+		<h1>Hi, I am <span id="name">Christopher&nbsp;Dombroski</span>.</h1>
+		<div class="tickerDiv">
+			<h2 id="ticker">I am a software developer.</h2>
+		</div>
+		<p>I've made a few things that I want to share because I think they are cool. They are made using Java, C/C++, Javascript, and much, much more. If you are looking for someone that figures things out, look no further.</p>
+		<div class="scroll-arrow"><span class="scrollfade">&#x26db;</span></div>
+	</div>
+	<div id="robot" class="page">
+		<h1>Look at this awesome robot.</h1>
+		<div class="container">
+			<div class="item">
+				<p>This is what I have been working on for a while now. It’s a massive undertaking. The fun part was programming the thing. If you can’t visualize 3d transformations in your head then you would have a really difficult time with it. Some day I will have a live version that you can control over the internet. That would really make things special.</p>
+				<p>I am currently on the second hardware revision (the old one broke haha). PLA is not the strongest material and its major downfall is its tendency to melt in a car on a hot day. Revision 2 was a challenge to myself to make all the motors and electronics contained so as to look more like a commercial product.</p>
+				<p>The software is really cool. It’s entirely controlled by a web browser. The brain is a Raspberry Pi and hosts a WiFi hotspot so that phones can connect and control. Smile! the camera live streams to the browser too. In the future I am looking into rough 3d mapping from the camera. I plan on using technology similar to motion tracking</p>
+			</div>
+			<div class="item secondary">
+				<div class="slideshow">
+					<div class="slide slide-transition"
+						data-caption="Ooh look how pretty it is. It’s purple and its name is Murphy. This is a computer render taken near the end of development.">
+						<img src="img/robot_render.jpg">
+					</div>
+					
+					<div class="slide slide-transition"
+						data-caption="wat">
+						<img src="img/absurd.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="renderer" class="page">
+		<h1>Wow, ray tracing! (said nobody ever)</h1>
+		<div class="container">
+			<div class="item">
+				<p>Well, well, well. What am I going to put here?</p>
+			</div>
+			<div class="item secondary">
+				<div class="slideshow">
+					<div class="slide side-transition"
+						data-caption="Best recreation of the original Cornell Box that this ray tracer can do. Note how the color bleeds from the walls onto the sides of the boxes.">
+						<img src="img/renderer/cornell-box denoise.png">
+					</div>
+					<div class="slide side-transition" 
+						data-caption="Cornell University constructed the Cornell Box and took this reference image under very controlled lighting.">
+						<img src="img/renderer/box.jpg">
+					</div>
+					<div class="slide side-transition" 
+						data-caption="In this case, there was no shading applied to bounced rays. The result is near total blending of colors.">
+						<img src="img/renderer/cornell-box first GI.png">
+					</div>
+					<div class="slide side-transition" 
+						data-caption="Note how grainy this image is. It was rendered with a low amount of samples.">
+						<img src="img/renderer/cornell-box - GI 24-3.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ai" class="page">
+		<h1>Neural networks, how do they work‽</h1>
+		<div class="container">
+			<div class="item">
+				<p>Hey there, this is some text!</p>
+			</div>	
+			<div class="item secondary">
+				<div class="digitsAI container">
+					<div class="item">
+						<canvas class="digitInput"></canvas>
+					</div>
+					<div class="item">
+						<button class="digitClear">clear</button><br>
+						<label for="raw">Raw input:</label>
+						<canvas class="digitRaw" id="raw"></canvas><br>
+						<label for="guess">Best guess:</label>
+						<label class="digitGuess" id="guess"></label><br>
+					</div>
+				</div>
+				<p>Go ahead. Draw any number between 0 and 9.</p>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="page">
+		<h1>Thanks for taking time to look at my portfolio. Please let me know what you think!</h1>
+		<h2>Call me at <a href="tel:+1-425-412-0172">425 412 0172</a>!</h2>
+		<h2>Or if you prefer something a little bit more structured, my email is <a href="mailto:dombroski.christopher@gmail.com?Subject=Hi%20there!" target="_top">dombroski.christopher@gmail.com</a>.</h2>
+		<p></p>
+	</div>
+  </body>
+</html>
