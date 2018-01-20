@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
 		// rendering
 		var context = canvas.getContext("2d");
 		
-		var radius = 13 * window.devicePixelRatio;
+		var radius = 13;
 		context.strokeStyle = "#FFFFFF";
 		context.lineJoin = "round";
 		context.lineCap = "round";
@@ -112,7 +112,7 @@ window.addEventListener('load', function() {
 });
 
 function resizeInput(canvas) {
-	var size = INPUT_SIZE * SCALE * window.devicePixelRatio;
+	var size = INPUT_SIZE * SCALE;
 	canvas.width = size;
 	canvas.height = size;
 }

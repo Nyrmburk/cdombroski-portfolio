@@ -66,6 +66,37 @@ window.addEventListener('load', function() {
 		setSlide(slideshow, 0);
 		//setInterval(nextSlide, 5000);
 	}
+	
+	var images = document.getElementsByTagName("img");
+	
+	for (var i = 0; i < images.length; i++) {
+		var image = images[i];
+		
+		var srcUrl = image.dataset.src;
+		
+		if (srcUrl) {
+			loadImage(image, function(img) {
+				img.style.filter = "unset";
+			});
+		} else {
+			image.style.filter = "unset";
+		}
+	}
+	
+	function loadImage (el, fn) {
+		var img = new Image()
+		  , src = image.dataset.src;
+		img.onload = function() {
+		  if (!! el.parent)
+			el.parent.replaceChild(img, el)
+		  else
+			el.src = src;
+
+		  if (fn)
+			  fn(el);
+		}
+		img.src = src;
+	  }
 });
 
 function setSlide(slideshow, index) {

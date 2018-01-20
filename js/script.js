@@ -65,16 +65,17 @@ var fadeElements;
 window.onload = function() {
 	setInterval(updateTicker, 3000);
 	fadeElements = document.getElementsByClassName("scrollfade");
-	console.log("Don't shake hands with the lonely kids 'cause I hear that shit's contagious.");
 };
 
 window.onscroll = function() {
 	
+	if (!fadeElements)
+		return;
 	for (var i = 0; i < fadeElements.length; i++) {
 		
 		var element = fadeElements[i];
 		
-		var offset = element.offsetHeight;
+		var offset = 3 * element.offsetHeight;
 		var scroll = pageYOffset;
 		var opacity = (offset - scroll) / offset;
 		
