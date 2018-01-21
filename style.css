@@ -11,9 +11,6 @@ h1 {
 }
 
 img {
-	width: auto;
-    max-width: 100%;
-	max-height: 80vh;
 	transition: filter 0.1s;
 	filter: blur(1em);
 }
@@ -62,9 +59,8 @@ a {
 }
 
 #name {
-	color:#C06C84;
-	text-shadow: 0.05em 0.05em #6C5B7B;
-	max-width: 100%
+	color:#fb8c68;
+	font-family: Roboto Black, Roboto, sans-serif
 }
 
 #ticker {
@@ -101,6 +97,9 @@ a {
 .slide * {
 	margin: auto;
 	display: block;
+	max-height: 60vh;
+	object-fit: contain;
+	width: 100%;
 }
 
 .selectors {
@@ -143,6 +142,17 @@ a {
 	border-radius: 0.35em;
 }
 
+.digitsAI .item {
+	/*position: relative;*/
+}
+
+.digitsAI img {
+	position: absolute;
+	top: 0;
+	width: 25%;
+	animation: attention 1.5s infinite;
+}
+
 .digitsAI .digitRaw {
 	width: 112px;
 	height: 112px;
@@ -165,7 +175,6 @@ a {
 .item {
 	box-sizing: border-box;
 	width: 100%;
-	height: 100%;
 	padding: 1em;
 	border-radius: 0.5em;
 }
@@ -175,6 +184,21 @@ a {
 	user-select: none;
 	text-align: center;
 	font-size: 2em;
+}
+
+body::-webkit-scrollbar {
+	width: 0.35em;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #37374e;
+}
+
+@keyframes attention {
+	50% {
+		opacity: 0.85;
+		opacity: 0.5;
+	}
 }
 
 @media screen and (max-width: 70em) {
@@ -189,5 +213,13 @@ a {
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'), url(font/roboto.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(font/roboto_black.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }

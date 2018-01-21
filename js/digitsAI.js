@@ -99,6 +99,9 @@ window.addEventListener('load', function() {
 		}
 		canvas.addEventListener('mouseup', end);
 		canvas.addEventListener('touchend', end);
+		canvas.addEventListener('mouseleave', end);		
+		canvas.addEventListener('touchleave', end);
+		
 		
 		// clear button
 		function clear() {
