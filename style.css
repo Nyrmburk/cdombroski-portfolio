@@ -217,7 +217,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Roboto Black';
   font-style: normal;
   font-weight: 900;
   src: local('Roboto Black'), local('Roboto-Black'), url(font/roboto_black.woff2) format('woff2');
