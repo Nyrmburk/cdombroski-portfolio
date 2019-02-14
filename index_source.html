@@ -1,187 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="user-scalable=no, initial-scale=0.8">
-    <title>Christopher Dombroski</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js"></script>
-	<script src="js/slideshow.js"></script>
-	<script src="js/digitsAI.js"></script>
-	<script src="js/feedforward.js"></script>
-	<script src="js/network.js"></script>
-	
-	<!--<link rel="stylesheet" href="style_min.css">
-	<script src="js/min.js"></script>-->
-  </head>
-  <body>
-	<!--<div id="contents">
-		<a href="#intro">Introduction</a>
-		<a href="#robot">Robot</a>
-		<a href="#renderer">Ray Tracer</a>
-		<a href="#ai">Neural Network</a>
-		<a href="#footer">Contact</a>
-	</div>-->
-	<div id="intro" class="page">
-		<h1>Hi, I am <span id="name">Christopher Dombroski</span>.</h1>
-		<div class="tickerDiv">
-			<h2 id="ticker">I am a software developer.</h2>
-		</div>
-		<p>I've made a few things that I want to share because I think they are cool. They are made using Java, C/C++, Javascript, and much, much more. If you are looking for someone that figures things out, look no further.</p>
-		<div class="scroll-arrow"><span class="scrollfade">&#x26db;</span></div>
-	</div>
-	<div id="robot" class="page">
-		<h1>Look at this awesome robot.</h1>
-		<div class="container">
-			<div class="item">
-				<p>I have always been intrigued by robotics. When I was a kid, I participated in so many FIRST robotics competitions. One time we even won regionals! As such I feel like robotics, both building and programming, was a major cornerstone of my passion for technology.</p>
-				<p>In a particulary exciting job I took, I had full access to a 3D printer for the first time. I knew what I had to do. I designed up a functional (but slightly ugly) hexapod robot. It was great. So many hours of work went into it and it was my pride and joy. Then tragedy struck; I left it in a hot car and the plastic melted and deformed. But frustrating as it was, I was determined to use what I had learned to push myself and redesign. Now I have a super sleek robot that is better than ever.</p>
-				<p>The robot is controlled from a website that it hosts over it's WiFI hotspot. Live video is streamed over for a first person view. The interface uses a virtual joystick to look around and drive.</p>
-				<p>Overall, this project was a lot of fun and a lot of work. It's been difficult making everything work perfectly. So many things have gone so wrong that it's been a major challenge to keep working on it. In fact, so many obstacles have been faced that I named it "Murphy" after Murphy's Law.</p>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, initial-scale=0.8">
+		<title>Christopher Dombroski</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<script defer src="js/script.js"></script>
+		<script defer src="js/slideshow.js"></script>
+		<script defer src="js/digitsAI.js"></script>
+		<script defer src="js/feedforward.js"></script>
+		<script defer src="js/network.js"></script>
+
+		<!--<link rel="stylesheet" href="style_min.css">
+		<script src="js/min.js"></script>-->
+	</head>
+	<body>
+		<!--<div id="contents">
+			<a href="#intro">Introduction</a>
+			<a href="#robot">Robot</a>
+			<a href="#renderer">Ray Tracer</a>
+			<a href="#ai">Neural Network</a>
+			<a href="#footer">Contact</a>
+		</div>-->
+		<div id="intro" class="page">
+			<h1>Hi, I am <span id="name">Christopher Dombroski</span>.</h1>
+			<div class="tickerDiv">
+				<h2 id="ticker">I am a software developer.</h2>
 			</div>
-			<div class="item secondary">
-				<div class="slideshow">
-					<div class="slide"
-						data-caption="Ooh look how pretty it is. It’s purple and its name is Murphy. This is a computer render taken near the end of development.">
-						<img src="img/robot/robot_render_lowres.jpg" data-src="img/robot/robot_render.png">
-					</div>
-					<div class="slide"
-						data-caption="Mark 2, the successor.">
-						<img src="img/robot/mark_2_lowres.jpg" data-src="img/robot/mark_2.jpg">
-					</div>
-					<!-- 3d view, gait animation, video -->
-					<div class="slide"
-						data-caption="Mark 1, the original.">
-						<img src="img/robot/mark_1_lowres.jpg", data-src="img/robot/mark_1.jpg">
-					</div>
-					<div class="slide"
-						data-caption="Showing off where the battery goes.">
-						<img src="img/robot/mark_1_battery_lowres.jpg" data-src="img/robot/mark_1_battery.jpg">
-					</div>
-					<div class="slide"
-						data-caption="My only regret.. is that I have... boneitis!! Don't leave PLA plastic in a hot car.">
-						<img src="img/robot/boneitis_lowres.jpg" data-src="img/robot/boneitis.jpg">
-					</div>
-					<div class="slide"
-						data-caption="">
-						<img src="img/robot/front_lowres.jpg" data-src="img/robot/front.jpg">
-					</div>
-					<div class="slide"
-						data-caption="">
-						<img src="img/robot/top_lowres.jpg" data-src="img/robot/top.jpg">
-					</div>
-					<div class="slide"
-						data-caption="SO. MANY. PARTS.">
-						<img src="img/robot/parts_lowres.jpg" data-src="img/robot/parts.jpg">
-					</div>
-					<div class="slide"
-						data-caption="The electronics are really jam-packed in there. In this pic I don't even have the servo wires in place yet!">
-						<img src="img/robot/electronics_lowres.jpg" data-src="img/robot/electronics.jpg">
-					</div>
-					<div class="slide"
-						data-caption="">
-						<img src="img/robot/onward_lowres.jpg" data-src="img/robot/onward.jpg">
-					</div>
-					<div class="slide"
-						data-caption="">
-						<img src="img/robot/side_lowres.jpg" data-src="img/robot/side.jpg">
+			<p></p>
+			<div class="scroll-arrow scrollfade bob">
+				<svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+			</div>
+		</div>
+		<div id="robot" class="page">
+			<h1>Look at this awesome robot.</h1>
+			<div class="container">
+				<div class="item">
+					<p>I have always been intrigued by robotics. When I was a kid, I participated in so many FIRST robotics competitions. One time we even won regionals! As such I feel like robotics, both building and programming, was a major cornerstone of my passion for technology.</p>
+					<p>In a particulary exciting job I took, I had full access to a 3D printer for the first time. I knew what I had to do. I designed up a functional (but slightly ugly) hexapod robot. It was great. So many hours of work went into it and it was my pride and joy. Then tragedy struck; I left it in a hot car and the plastic melted and deformed. But frustrating as it was, I was determined to use what I had learned to push myself and redesign. Now I have a super sleek robot that is better than ever.</p>
+					<p>The robot is controlled from a website that it hosts over it's WiFI hotspot. Live video is streamed over for a first person view. The interface uses a virtual joystick to look around and drive.</p>
+					<p>Overall, this project was a lot of fun and a lot of work. It's been difficult making everything work perfectly. So many things have gone so wrong that it's been a major challenge to keep working on it. In fact, so many obstacles have been faced that I named it "Murphy" after Murphy's Law.</p>
+				</div>
+				<div class="item secondary">
+					<div class="slideshow">
+						<div class="slide"
+							data-caption="Ooh look how pretty it is. It’s purple and its name is Murphy. This is a computer render taken near the end of development.">
+							<img src="img/robot/robot_render_lowres.jpg"
+									data-src="img/robot/robot_render.png">
+						</div>
+						<div class="slide"
+							data-caption="Mark 2, the successor.">
+							<img src="img/robot/mark_2_lowres.jpg"
+									data-src="img/robot/mark_2.jpg">
+						</div>
+						<!-- 3d view, gait animation, video -->
+						<div class="slide"
+							data-caption="Mark 1, the original.">
+							<img src="img/robot/mark_1_lowres.jpg"
+									data-src="img/robot/mark_1.jpg">
+						</div>
+						<div class="slide"
+							data-caption="Showing off where the battery goes.">
+							<img src="img/robot/mark_1_battery_lowres.jpg"
+									data-src="img/robot/mark_1_battery.jpg">
+						</div>
+						<div class="slide"
+							data-caption="My only regret.. is that I have... boneitis!! Don't leave PLA plastic in a hot car.">
+							<img src="img/robot/boneitis_lowres.jpg"
+									data-src="img/robot/boneitis.jpg">
+						</div>
+						<div class="slide"
+							data-caption="">
+							<img src="img/robot/front_lowres.jpg"
+									data-src="img/robot/front.jpg">
+						</div>
+						<div class="slide"
+							data-caption="">
+							<img src="img/robot/top_lowres.jpg"
+									data-src="img/robot/top.jpg">
+						</div>
+						<div class="slide"
+							data-caption="SO. MANY. PARTS.">
+							<img src="img/robot/parts_lowres.jpg"
+									data-src="img/robot/parts.jpg">
+						</div>
+						<div class="slide"
+							data-caption="The electronics are really jam-packed in there. In this pic I don't even have the servo wires in place yet!">
+							<img src="img/robot/electronics_lowres.jpg"
+									data-src="img/robot/electronics.jpg">
+						</div>
+						<div class="slide"
+							data-caption="">
+							<img src="img/robot/onward_lowres.jpg"
+									data-src="img/robot/onward.jpg">
+						</div>
+						<div class="slide"
+							data-caption="">
+							<img src="img/robot/side_lowres.jpg"
+									data-src="img/robot/side.jpg">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="renderer" class="page">
-		<h1>Wow, ray tracing! (said nobody ever)</h1>
-		<div class="container">
-			<div class="item">
-				<p>Everyone likes pretty pictures. Humans are inherently visual creatures. It makes sense that I would like rendering as much as robotics. Unfortunately I am not much of an artist. That doesn't stop me though. I find more interest in how things are drawn. In this case, scenes are rendered by simulating light and materials to create a photorealistic image.</p>
-				<p>The process of simulating light is called "ray tracing" because every photon can be represented by a path. A common approximation is to use a line. For every pixel in the image, a ray is shot out of the camera and bounced around in the scene to approximate lighting. It is a common optimization to trace rays backwards from the camera because it is unlikely for stray light rays to hit the camera.</p>
-				<p>Because ray tracing simulates light and materials, it can be comparable to real-world images. There are several lighting effects that are inherently solved such as color bleed, ambient occlusion, reflections, refraction, caustics, and soft shadows. Every single one of those effects is very difficult to approximate with the simpler rasterization renderers.</p>
-				<p>Ray tracing is used heavily in any industry where high quality graphics of 3D environments are required. For example, the movie industry uses it for all of their CG. It is an offline type of rendering, meaning it cannot be done fast enough for real-time animations. Unlike video games where every frame must be done in a matter of milliseconds, ray traced images can take hours for a single image.</p>
-				<p>Cornell University constructed a real-world model of a box with a green wall, red wall, a light in the top, and two smaller blocks inside. They then took a picture as a reference so they could compare the output from their own renderer. Since then it has become a common test model and baseline for modern renderers. My ray tracer returns an acceptable result but could be improved.</p>
-				<p>To learn more about my ray tracer, visit <a href="https://github.com/Nyrmburk/RayTrace">github.com/Nyrmburk/RayTrace</a>.</p>
-			</div>
-			<div class="item secondary">
-				<div class="slideshow">
-					<div class="slide"
-						data-caption="The best recreation of the original Cornell Box that my ray tracer can do. Note how the color bleeds from the walls onto the sides of the boxes and the soft shadows.">
-						<img src="img/renderer/cornell-box_denoise_lowres.jpg" data-src="img/renderer/cornell-box_denoise.png">
-					</div>
-					<div class="slide" 
-						data-caption="Cornell University constructed the Cornell Box and took this reference image under very controlled lighting.">
-						<img src="img/renderer/box_lowres.jpg" data-src="img/renderer/box.jpg">
-					</div>
-					<div class="slide" 
-						data-caption="In this case, there was no shading applied to bounced rays. The result is near total blending of colors. One of my first failures at global illumination.">
-						<img src="img/renderer/cornell-box_first_GI_lowres.jpg" data-src="img/renderer/cornell-box_first_GI.png">
-					</div>
-					<div class="slide" 
-						data-caption="Note how grainy this image is. It was rendered with a low amount of samples.">
-						<img src="img/renderer/cornell-box_GI_24-3_lowres.jpg" data-src="img/renderer/cornell-box_GI_24-3.png">
-					</div>
-					<div class="slide" 
-						data-caption="This is the Stanford Bunny, the first 3D-scanned model. It is also commonly used as test model.">
-						<img src="img/renderer/another_bunny_lowres.jpg" data-src="img/renderer/another_bunny.png">
-					</div>
-					<div class="slide" 
-						data-caption="The bunny with test textures applied.">
-						<img src="img/renderer/texture_test_lowres.jpg" data-src="img/renderer/texture_test.png">
-					</div>
-					<div class="slide" 
-						data-caption="Bump mapping is a technology to simulate surface roughness. A leather couch texture and bump map was applied to get the effect of a bumpy surface when it's actually flat. Have you have ever seen a leather couch bunny?">
-						<img src="img/renderer/adjusted chesterfield_lowres.jpg" data-src="img/renderer/adjusted_chesterfield.png">
-					</div>
-					<div class="slide" 
-						data-caption="Multiple materials can be achieved with bump mapping and textures. This is a carbon fiber example.">
-						<img src="img/renderer/carbon fiber_lowres.jpg" data-src="img/renderer/carbon_fiber.png">
+		<div id="renderer" class="page">
+			<h1>Wow, ray tracing! (said nobody ever)</h1>
+			<div class="container">
+				<div class="item">
+					<p>Everyone likes pretty pictures. Humans are inherently visual creatures. It makes sense that I would like rendering as much as robotics. Unfortunately I am not much of an artist. That doesn't stop me though. I find more interest in how things are drawn. In this case, scenes are rendered by simulating light and materials to create a photorealistic image.</p>
+					<p>The process of simulating light is called "ray tracing" because every photon can be represented by a path. A common approximation is to use a line. For every pixel in the image, a ray is shot out of the camera and bounced around in the scene to approximate lighting. It is a common optimization to trace rays backwards from the camera because it is unlikely for stray light rays to hit the camera.</p>
+					<p>Because ray tracing simulates light and materials, it can be comparable to real-world images. There are several lighting effects that are inherently solved such as color bleed, ambient occlusion, reflections, refraction, caustics, and soft shadows. Every single one of those effects is very difficult to approximate with the simpler rasterization renderers.</p>
+					<p>Ray tracing is used heavily in any industry where high quality graphics of 3D environments are required. For example, the movie industry uses it for all of their CG. It is an offline type of rendering, meaning it cannot be done fast enough for real-time animations. Unlike video games where every frame must be done in a matter of milliseconds, ray traced images can take hours for a single image.</p>
+					<p>Cornell University constructed a real-world model of a box with a green wall, red wall, a light in the top, and two smaller blocks inside. They then took a picture as a reference so they could compare the output from their own renderer. Since then it has become a common test model and baseline for modern renderers. My ray tracer returns an acceptable result but could be improved.</p>
+					<p>To learn more about my ray tracer, visit <a href="https://github.com/Nyrmburk/RayTrace">github.com/Nyrmburk/RayTrace</a>.</p>
+				</div>
+				<div class="item secondary">
+					<div class="slideshow">
+						<div class="slide"
+							data-caption="The best recreation of the original Cornell Box that my ray tracer can do. Note how the color bleeds from the walls onto the sides of the boxes and the soft shadows.">
+							<img src="img/renderer/cornell-box_denoise_lowres.jpg"
+									data-src="img/renderer/cornell-box_denoise.png">
+						</div>
+						<div class="slide"
+							data-caption="Cornell University constructed the Cornell Box and took this reference image under very controlled lighting.">
+							<img src="img/renderer/box_lowres.jpg"
+									data-src="img/renderer/box.jpg">
+						</div>
+						<div class="slide"
+							data-caption="In this case, there was no shading applied to bounced rays. The result is near total blending of colors. One of my first failures at global illumination.">
+							<img src="img/renderer/cornell-box_first_GI_lowres.jpg"
+									data-src="img/renderer/cornell-box_first_GI.png">
+						</div>
+						<div class="slide"
+							data-caption="Note how grainy this image is. It was rendered with a low amount of samples.">
+							<img src="img/renderer/cornell-box_GI_24-3_lowres.jpg"
+									data-src="img/renderer/cornell-box_GI_24-3.png">
+						</div>
+						<div class="slide"
+							data-caption="This is the Stanford Bunny, the first 3D-scanned model. It is also commonly used as test model.">
+							<img src="img/renderer/another_bunny_lowres.jpg"
+									data-src="img/renderer/another_bunny.png">
+						</div>
+						<div class="slide"
+							data-caption="The bunny with test textures applied.">
+							<img src="img/renderer/texture_test_lowres.jpg"
+									data-src="img/renderer/texture_test.png">
+						</div>
+						<div class="slide"
+							data-caption="Bump mapping is a technology to simulate surface roughness. A leather couch texture and bump map was applied to get the effect of a bumpy surface when it's actually flat. Have you have ever seen a leather couch bunny?">
+							<img src="img/renderer/adjusted chesterfield_lowres.jpg"
+									data-src="img/renderer/adjusted_chesterfield.png">
+						</div>
+						<div class="slide"
+							data-caption="Multiple materials can be achieved with bump mapping and textures. This is an example of carbon fiber.">
+							<img src="img/renderer/carbon fiber_lowres.jpg"
+									data-src="img/renderer/carbon_fiber.png">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="ai" class="page">
-		<h1>Neural networks, how do they work‽</h1>
-		<div class="container">
-			<div class="item">
-				<p>Neural networks are something that is gaining a lot of attention and real-world adoption in the present day. They were actually invented in 1958 but were impractical due to computer speed. Modern day equipment and decades of research have allowed for it to become one of today's most cutting-edge technologies.</p>
-				<p>A common use case for neural networks is classification. The MNIST handwritten digit database is a popular exercise. The goal is to take an image of a digit from 0-9 and correctly guess which one it is. Modern AI is so good that it can beat most humans for accuracy.</p>
-				<p>I created a simple feed-forward network. It's the most basic type but still incredibly useful. It is comprised of an input layer, processing layers, and an output layer. Every layer is an array of "neurons" that hold a value. Each layer is fully connected to every neuron in the following layer by "synapses". A synapse holds a value and the host neuron's value is multiplied by it and added to the target neuron (in the next layer). Training is done by iteratively tweaking synapse values by reducing calculated error.</p>
-				<p>In this case, a 28x28 pixel image is sent to the network containing 40 processing neurons. After calculating the processing layer, it is sent to the 10 output neurons representing the digits 0-9. The output neuron with the highest value is selected as the best guess and displayed.<p>
-			</div>	
-			<div class="item secondary">
-				<div class="digitsAI container">
-					<div class="item">
-						<canvas class="digitInput"></canvas>
-						<!--<img src="img/ic_edit_white_24px.svg">-->
-						<button class="digitClear">clear</button><br>
-					</div>
-					<div class="item">
-						<label for="raw">Raw input:</label>
-						<canvas class="digitRaw" id="raw"></canvas><br>
-						<label for="guess">Best guess:</label>
-						<label class="digitGuess" id="guess"></label><br>
-					</div>
+		<div id="ai" class="page">
+			<h1>Neural networks, how do they work‽</h1>
+			<div class="container">
+				<div class="item">
+					<p>Neural networks are something that is gaining a lot of attention and real-world adoption in the present day. They were actually invented in 1958 but were impractical due to computer speed. Modern day equipment and decades of research have allowed for it to become one of today's most cutting-edge technologies.</p>
+					<p>A common use case for neural networks is classification. The MNIST handwritten digit database is a popular exercise. The goal is to take an image of a digit from 0-9 and correctly guess which one it is. Modern AI is so good that it can beat most humans for accuracy.</p>
+					<p>I created a simple feed-forward network. It's the most basic type but still incredibly useful. It is comprised of an input layer, processing layers, and an output layer. Every layer is an array of "neurons" that hold a value. Each layer is fully connected to every neuron in the following layer by "synapses". A synapse holds a value and the host neuron's value is multiplied by it and added to the target neuron (in the next layer). Training is done by iteratively tweaking synapse values by reducing calculated error.</p>
+					<p>In this case, a 28x28 pixel image is sent to the network containing 40 processing neurons. After calculating the processing layer, it is sent to the 10 output neurons representing the digits 0-9. The output neuron with the highest value is selected as the best guess and displayed.<p>
 				</div>
-				<p>Go ahead. Draw any number between 0 and 9.</p>
-				<p>If this was a convolutional network, the output would be more accurate</p>
-				<p>Tips:</p>
-				<ul>
-					<li>Use 90% of the available space.</li>
-					<li>Center the number in the middle</li>
-					<li>Write legibly.</li>
-				</ul>
+				<div class="item secondary">
+					<div class="digitsAI container">
+						<div class="item">
+							<canvas class="digitInput"></canvas>
+							<!--<img src="img/ic_edit_white_24px.svg">-->
+							<button class="digitClear">clear</button><br>
+						</div>
+						<div class="item">
+							<label for="raw">Raw input:</label>
+							<canvas class="digitRaw" id="raw"></canvas><br>
+							<label for="guess">Best guess:</label>
+							<label class="digitGuess" id="guess"></label><br>
+						</div>
+					</div>
+					<p>Go ahead. Draw any number between 0 and 9.</p>
+					<p>If this was a convolutional network, the output would be more accurate</p>
+					<p>Tips:</p>
+					<ul>
+						<li>Use 90% of the available space.</li>
+						<li>Center the number in the middle</li>
+						<li>Write legibly.</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div id="footer" class="page">
-		<h1>Thanks for taking time to look at my portfolio.</h1>
-		<h2>Please let me know what you think!</h2>
-		<div class="item">
-			<p>Call me at <a href="tel:+1-425-412-0172">425 412 0172</a>!</p>
-			<p>Or if you prefer something a little bit more structured, my email is <a href="mailto:dombroski.christopher@gmail.com" target="_top">dombroski.christopher@gmail.com</a>.</p>
-			<p>My github is <a href="https://github.com/Nyrmburk">github.com/Nyrmburk</a>.</p>
-			<p>I am currently looking for opportunities and would appreciate contact. Invite me out to get a coffee or something. Add me on <a href="https://www.linkedin.com/in/nyrmburk/">LinkedIn</a>. Call me and chat for a bit. Do it.</p>
+		<div id="footer" class="page">
+			<h1>Thanks for taking time to look at my portfolio.</h1>
+			<h2>Please let me know what you think!</h2>
+			<div class="item">
+				<p>Call me at <a href="tel:+1-425-412-0172">425 412 0172</a>!</p>
+				<p>Or if you prefer something a little bit more structured, my email is <a href="mailto:dombroski.christopher@gmail.com" target="_top">dombroski.christopher@gmail.com</a>.</p>
+				<p>My github is <a href="https://github.com/Nyrmburk">github.com/Nyrmburk</a>.</p>
+				<p>I am currently looking for opportunities and would appreciate contact. Invite me out to get a coffee or something. Add me on <a href="https://www.linkedin.com/in/nyrmburk/">LinkedIn</a>. Call me and chat for a bit. Do it.</p>
+			</div>
 		</div>
-	</div>
-  </body>
+	</body>
 </html>
