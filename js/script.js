@@ -1,3 +1,4 @@
+var phraseIndex = 0;
 var phrases = [
 	"This should cycle through some dumb phrases.",
 	"Give me money please.",
@@ -6,7 +7,6 @@ var phrases = [
 	"I AM TOTALLY NOT A ROBOT.",
 	"Pretty good.",
 	"Do me a flavor and send an email my way.",
-	"I’m ugly but at least my eyes are green.",
 	"You should give me a job.",
 	"I’m probably locked in my room playing with LEGO.",
 	"I don’t even see the code. All I see is blonde, brunette, redhead.",
@@ -19,7 +19,7 @@ var phrases = [
 	"HTML is the best programming language.",
 	"People who put noses in smiley faces are heathens.",
 	":-)",
-	"I'm a genius. I build robots for fun.",
+	"I build robots for fun.",
 	"Programmer Extraordinaire.",
 	"I'm pretty sure we're all in a simulation.",
 	"My favorite color is orange.",
@@ -35,8 +35,6 @@ var phrases = [
 	"\"This shouldn't be working.\"",
 ];
 
-var consumedPhrases = [];
-
 function updateTicker() {
 	
 	var ticker = document.getElementById("ticker");
@@ -45,14 +43,9 @@ function updateTicker() {
 		return; // mouse is over the ticker and we don't want to skip it.
 	
 	ticker.className += "fade";
-	
-	if (phrases.length == 0) {
-		phrases = consumedPhrases;
-		consumedPhrases = [];
-	}
-	var index = Math.floor(Math.random() * phrases.length);
-	var phrase = phrases.splice(index, 1);
-	consumedPhrases.push(phrase);
+
+	var phrase = phrases[phraseIndex % phrases.length];
+	phraseIndex++;
 	
 	var delay = Math.floor(parseFloat(window.getComputedStyle(ticker)["transitionDuration"]) * 1000);
 	setTimeout(function() {
