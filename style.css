@@ -29,7 +29,7 @@ button {
 }
 
 a {
-	color:#d07781;
+	color:#fb8c68;
 }
 
 #contents {
@@ -180,10 +180,28 @@ a {
 }
 
 .scroll-arrow {
-	padding: 1em;
+	padding: 2em;
 	user-select: none;
 	text-align: center;
-	font-size: 2em;
+	fill: currentColor;
+}
+
+.bob {
+	animation: bob 1s infinite;
+}
+
+@keyframes bob {
+	from {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(0, -0.25em);
+	}
+
+	to {
+		transform: translate(0, 0);
+	}
 }
 
 body::-webkit-scrollbar {
