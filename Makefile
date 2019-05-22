@@ -30,7 +30,7 @@ js/min.js: $(JS)
 	uglifyjs -o $@ -c -m -- $^
 
 min.css: style.css
-	cleancss -O2 -o $@ $^
+	cleancss -O0 -o $@ $^
 
 .PHONY: clean
 clean:
