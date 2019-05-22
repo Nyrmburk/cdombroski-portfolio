@@ -1,3 +1,11 @@
+# out files
+index.html
+js/min.js
+min.css
+
+# vim swap files
+*.swp
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
