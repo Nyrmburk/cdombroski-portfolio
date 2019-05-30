@@ -86,12 +86,32 @@ a {
 	background-color: #37374e;
 }
 
-.slide {
-	display: none;
-	background-color: black;
+.slideshow {
 	border-top-left-radius: 0.35em;
-	border-top-right-radius: 0.35em;
+    border-top-right-radius: 0.35em;
 	overflow: hidden;
+}
+
+.slider {
+	display: flex;
+	overflow-x: auto;
+
+	background-color: black;
+
+	-webkit-overflow-scrolling: auto;
+	scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slide {
+	width: 100%;
+	flex-shrink: 0;
+	background-color: black;
+
+	scroll-snap-align: center;
 }
 
 .slide * {
@@ -104,9 +124,9 @@ a {
 
 .selectors {
 	text-align: center;
+	padding: 0.15em;
 	margin-bottom: 0.5em;
 	background-color: black;
-	opacity: 0.35;
 	border-bottom-left-radius: 0.35em;
 	border-bottom-right-radius: 0.35em;
 }
@@ -117,13 +137,12 @@ a {
 	padding-left: 0.25em;
 	padding-right: 0.25em;
 	font-weight: bold;
-	color: white;
-	opacity: 0.5;
+	color: #888888;
 	transition: opacity 0.1s;
 }
 
 .selectorActive, .selector:hover {
-	opacity: 0.85;
+	color: #cccccc;
 }
 
 .digitsAI .item {
@@ -207,7 +226,7 @@ a {
 body::-webkit-scrollbar {
 	width: 0.35em;
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: #37374e;
 }
