@@ -32,6 +32,10 @@ a {
 	color: #fb8c68;
 }
 
+dd {
+	font-style: italic;
+}
+
 #contents {
 	position: fixed;
 	top: 0;
