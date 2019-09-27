@@ -1,13 +1,13 @@
 body {
-    font-family:Roboto, sans-serif;
-    margin:0;
-	font-size:1.5em;
+	font-family: Roboto, sans-serif;
+	margin: 0;
+	font-size: 1.5em;
 	background-color: #222233;
-    color: #A6B0C4;
+	color: #A6B0C4;
 }
 
 h1 {
-    margin:0;
+	margin: 0;
 }
 
 img {
@@ -17,19 +17,19 @@ img {
 
 button {
 	display: block;
-	border:none;
+	border: none;
 	border-radius: 0.35em;
 	font-size: 1em;
 	padding: 0.25em 0.5em;
 	box-shadow: 0.15em 0.15em #00000077;
 	user-select: none;
-	font-family:Roboto, sans-serif;
+	font-family: Roboto, sans-serif;
 	background-color: #A6B0C4;
 	color: #222233;
 }
 
 a {
-	color:#fb8c68;
+	color: #fb8c68;
 }
 
 #contents {
@@ -59,13 +59,13 @@ a {
 }
 
 #name {
-	color:#fb8c68;
+	color: #fb8c68;
 	font-family: Roboto Black, Roboto, sans-serif
 }
 
 #ticker {
-	margin-left:1em;
-	margin-right:1em;
+	margin-left: 1em;
+	margin-right: 1em;
 	transition: opacity 0.2s ease-in-out;
 	display: inline-block;
 	/*font-weight: lighter;*/
@@ -88,7 +88,7 @@ a {
 
 .slideshow {
 	border-top-left-radius: 0.35em;
-    border-top-right-radius: 0.35em;
+	border-top-right-radius: 0.35em;
 	overflow: hidden;
 }
 
@@ -183,7 +183,7 @@ a {
 }
 
 .fade {
-	opacity:0;
+	opacity: 0;
 }
 
 .container {
@@ -228,7 +228,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #37374e;
+	background-color: #37374e;
 }
 
 @keyframes attention {
@@ -239,24 +239,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 70em) {
-	
 	.container {
 		flex-direction: column-reverse;
 	}
 }
 
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(font/roboto.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto'), local('Roboto-Regular'), url(font/roboto.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
 
 @font-face {
-  font-family: 'Roboto Black';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Roboto Black'), local('Roboto-Black'), url(font/roboto_black.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+	font-family: 'Roboto Black';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Roboto Black'), local('Roboto-Black'), url(font/roboto_black.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
