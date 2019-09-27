@@ -1,18 +1,15 @@
 var phraseIndex = 0;
 var phrases = [
 	"This should cycle through some dumb phrases.",
-	"Give me money please.",
 	"I make things.",
 	"Wow this website looks good!",
-	"I AM TOTALLY NOT A ROBOT.",
+	"<a href='https://source.android.com/security/overview/release-acknowledgements'>CVE-2019-9268</a>!",
 	"Pretty good.",
-	"Do me a flavor and send an email my way.",
-	"You should give me a job.",
+	"I AM TOTALLY NOT A ROBOT.",
 	"I’m probably locked in my room playing with LEGO.",
 	"It’s a Unix system, I know this.", 
 	"Did I mention that I would like a job?",
 	":(){:|:&};:",
-	"One job please!",
 	"Some days even my lucky rocket ship underpants don’t help.",
 	"Christopher Dombroccoli.",
 	"HTML is the best programming language.",
@@ -24,7 +21,6 @@ var phrases = [
 	"My favorite color is <font color=\"#fb8c68\">orange</font>.",
 	"Have a nice day!",
 	"I just finished a jigsaw puzzle. The package said 5+ years but it only took me 2 months.",
-	"It's a doggy dog world out there.",
 	"I should have bought Bitcoin.",
 	"I use <i>coding</i> and <i>algorithms</i> to solve problems.",
 	"The language I like to use most when programming is profanity.",
@@ -32,6 +28,8 @@ var phrases = [
 	"if ( !isWorking() ) { <br>&emsp;work();<br>}",
 	"Arrays should start at 2.",
 	"\"This shouldn't be working.\"",
+	"There's no place like ~",
+	"1 line change. In and out. 20 hour adventure.",
 ];
 
 function updateTicker() {
