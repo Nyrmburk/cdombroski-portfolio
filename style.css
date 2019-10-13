@@ -1,7 +1,7 @@
 body {
 	font-family: Roboto, sans-serif;
 	margin: 0;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	background-color: #222233;
 	color: #A6B0C4;
 }
@@ -53,6 +53,7 @@ dd {
 }
 
 #intro {
+	font-size: 1.2em;
 	display: flex;
 	flex-direction: column;
 }
@@ -64,7 +65,7 @@ dd {
 
 #name {
 	color: #fb8c68;
-	font-family: Roboto Black, Roboto, sans-serif
+	font-family: Roboto Black, Roboto, sans-serif;
 }
 
 #ticker {
@@ -239,6 +240,12 @@ body::-webkit-scrollbar-thumb {
 	50% {
 		opacity: 0.85;
 		opacity: 0.5;
+	}
+}
+
+@media screen and (max-width: 39em) {
+	#intro {
+		font-size: 4vw;
 	}
 }
 
