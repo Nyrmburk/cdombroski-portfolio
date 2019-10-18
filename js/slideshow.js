@@ -8,30 +8,30 @@ window.addEventListener('load', function() {
 	for (var i = 0; i < slideshows.length; i++) {
 		var slideshow = slideshows[i];
 
-		var observer = new IntersectionObserver(function(entries) {
-			for (let j = 0; j < entries.length; j++) {
-				var entry = entries[j];
-				if (!entry.isIntersecting)
-					continue;
+		// set current slide when the slide is in view
+		var slider = slideshow.getElementsByClassName("slider")[0];
+		slider.onscroll = function() {
+			var m_slideshow = slideshow;
+			var m_slider = slider;
+			var prevIndex = 0;
+			return function() {
+				if (Date.now() - resizeTime < 100)
+					return;
 
-				// a delay is needed to prevent the observer event from
-				// firing before the resize event.
-				window.requestAnimationFrame(function() {
-					var now = Date.now();
-					if (now - resizeTime < 50) {
-						// resized in between intersection event
-						return;
-					}
-					setSlide(entry.target, false);
-				});
+				var slideIndex = Math.round(
+						m_slideshow.slides.length * m_slider.scrollLeft /
+						m_slider.scrollWidth);
+				if (slideIndex != prevIndex) {
+					prevIndex = slideIndex;
+					setCurrentSlide(slideFromIndex(m_slideshow, slideIndex));
+				}
 			}
-		}, {root: slideshow, threshold: 0.55});
+		}();
 
-		var slides = slideshow.getElementsByClassName("slide");
-		for (let j = 0; j < slides.length; j++) {
-			var slide = slides[j];
+		slideshow.slides = slideshow.getElementsByClassName("slide");
+		for (let j = 0; j < slideshow.slides.length; j++) {
+			var slide = slideshow.slides[j];
 			slide.index = j;
-			observer.observe(slide);
 		}
 
 		createSelectors(slideshow);
@@ -39,12 +39,13 @@ window.addEventListener('load', function() {
 		var caption = document.createElement("div");
 		caption.classList.toggle("caption");
 		slideshow.appendChild(caption);
-		
-		setSlideIndex(slideshow, 0, false);
+		slideshow.caption = caption;
+	
+		setCurrentSlide(slideFromIndex(slideshow, 0));
+//		setTargetSlide(slideFromIndex(slideshow, 0));
 	}
-	
+
 	var images = document.getElementsByTagName("img");
-	
 	for (var i = 0; i < images.length; i++) {
 		var image = images[i];
 		
@@ -86,13 +87,12 @@ window.addEventListener('load', function() {
 		prev.innerHTML = "&#10094;";
 		prev.onclick = function() {
 			var m_slideshow = slideshow;
-			var index = m_slideshow.currentSlide.index;
-			setSlideIndex(m_slideshow, index - 1);
+			var index = m_slideshow.targetSlide.index;
+			setTargetSlide(slideFromIndex(m_slideshow, index - 1));
 		};
 		selectors.appendChild(prev);
 
-		var length = slideshow.getElementsByClassName("slide").length;
-		for (var j = 0; j < length; j++) {
+		for (var j = 0; j < slideshow.slides.length; j++) {
 			var selector = document.createElement("a");
 			selector.classList.toggle("selector");
 			selector.index = j;
@@ -100,7 +100,7 @@ window.addEventListener('load', function() {
 			selector.onclick = function() {
 				var m_slideshow = slideshow;
 				var index = j;
-				return function() {setSlideIndex(m_slideshow, index);};
+				return function() {setTargetSlide(m_slideshow.slides[index]);};
 			}();
 			selectors.appendChild(selector);
 		}
@@ -111,48 +111,49 @@ window.addEventListener('load', function() {
 		next.innerHTML = "&#10095;";
 		next.onclick = function() {
 			var m_slideshow = slideshow;
-			var index = m_slideshow.currentSlide.index;
-			setSlideIndex(m_slideshow, index + 1);
+			var index = m_slideshow.targetSlide.index;
+			setTargetSlide(slideFromIndex(m_slideshow, index + 1));
 		};
 		selectors.appendChild(next);
 
 		slideshow.appendChild(selectors);
+		slideshow.selectors = selectors.getElementsByClassName("selector");
 	}
 });
 
-function setSlide(slide, scroll = true) {
+// set the current slide, regardless of the target
+// used to style the selectors and get the slide caption
+function setCurrentSlide(slide) {
 	var slideshow = slide.parentElement.parentElement;
-	setSlideIndex(slideshow, slide.index, scroll);
+
+	slideshow.caption.innerText = slide.dataset.caption;
+
+	if (!slideshow.currentSlide) {
+		slideshow.currentSlide = slide;
+	}
+	if (!slideshow.targetSlide) {
+		slideshow.targetSlide = slide;
+	}
+	slideshow.selectors[slideshow.currentSlide.index+1].classList.remove("selectorActive");
+	slideshow.currentSlide = slide;
+	slideshow.selectors[slideshow.currentSlide.index+1].classList.add("selectorActive");
 }
 
-function setSlideIndex(slideshow, index, scroll = true) {
-	var slides = slideshow.getElementsByClassName("slide");
-	
-	index = mod(index, slides.length);
-	var slide = slides[index];
+// set the slide to move to
+function setTargetSlide(slide) {
+	var slideshow = slide.parentElement.parentElement;
 
-	if (scroll) {
-		slide.scrollIntoView({
-			behavior: "smooth",
-			inline: "center",
-			block: "center"
-		});
+	if (slideshow.targetSlide && slideshow.targetSlide != slideshow.currentSlide) {
+		slideshow.selectors[slideshow.targetSlide.index+1].classList.remove("selectorActive");
 	}
+	slideshow.targetSlide = slide;
+	slideshow.selectors[slide.index+1].classList.add("selectorActive");
 
-	var captions = slideshow.getElementsByClassName("caption");
-	for (let i = 0; i < captions.length; i++) {
-		captions[i].innerText = slide.dataset.caption;
-	}
-	
-	var selectorContainer = slideshow.getElementsByClassName("selectors");
-	for (var i = 0; i < selectorContainer.length; i++) {
-		var selectors = selectorContainer[i].getElementsByClassName("selector");
-		if (slideshow.currentSlide) {
-			selectors[slideshow.currentSlide.index + 1].classList.remove("selectorActive");
-		}
-		selectors[slide.index + 1].classList.add("selectorActive");
-	}
-	slideshow.currentSlide = slide;
+	scrollToSlide(slide);
+}
+
+function slideFromIndex(slideshow, index) {
+	return slideshow.slides[mod(index, slideshow.slides.length)];
 }
 
 function mod(n, m) {
@@ -160,14 +161,11 @@ function mod(n, m) {
 }
 
 function scrollToSlide(slide) {
-	var x = window.scrollX;
-	var y = window.scrollY;
 	slide.scrollIntoView({
-		behavior: "auto",
+		behavior: "smooth",
 		inline: "center",
+		block: "nearest",
 	});
-
-	window.scrollTo(x, y);
 }
 
 function openFullscreen(elem) {
@@ -195,10 +193,17 @@ function closeFullscreen() {
 }
 
 window.addEventListener('resize', function() {
+	resizeTime = Date.now();
 	var slideshows = document.getElementsByClassName("slideshow");
 	for (let i = 0; i < slideshows.length; i++) {
 		var slideshow = slideshows[i];
-		scrollToSlide(slideshow.currentSlide);
+		var x = window.scrollX;
+		var y = window.scrollY;
+		slideshow.currentSlide.scrollIntoView({
+			behavior: "auto",
+			inline: "center",
+			block: "nearest",
+        });
+		window.scrollTo(x, y);
 	}
-	resizeTime = Date.now();
 });
