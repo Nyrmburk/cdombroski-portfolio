@@ -91,6 +91,37 @@ dd {
 	background-color: #37374e;
 }
 
+.tech {
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 1em;
+}
+
+.tech > li {
+	display: block;
+	float: left;
+	margin: 0.125em;
+	padding: 0.1em;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	border-radius: 0.25em;
+	background-color: #37374e;
+	transition: background-color 0.1s;
+}
+
+.tech > li:hover {
+	background-color: transparent;
+}
+
+.tech > li > a {
+	color: inherit;
+	transition: color 0.1s;
+}
+
+.tech > li:hover > a {
+	color: #fb8c68;
+}
+
 .slideshow {
 	border-top-left-radius: 0.35em;
 	border-top-right-radius: 0.35em;
