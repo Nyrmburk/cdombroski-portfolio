@@ -12,6 +12,8 @@ index.html: index_source.html min.css js/min.js
 	sed -i "s/<script.*\/script>//g" $@
 	sed -i "s/<!--min-script-placeholder-->/<script defer src=js\/min.js><\/script>/g" $@
 	html-minifier \
+	--collapse-whitespace \
+	--conservative-collapse \
 	--collapse-boolean-attributes \
 	--collapse-inline-tag-whitespace \
 	--remove-comments \
