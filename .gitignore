@@ -2,6 +2,8 @@
 index.html
 js/min.js
 min.css
+img/*
+!img/source/
 
 # vim swap files
 *.swp

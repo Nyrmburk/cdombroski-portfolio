@@ -32,6 +32,16 @@ window.addEventListener('load', function() {
 		for (let j = 0; j < slideshow.slides.length; j++) {
 			var slide = slideshow.slides[j];
 			slide.index = j;
+
+			var image = slide.getElementsByTagName("img")[0];
+			if (image) {
+				var link = document.createElement("a");
+				link.href = image.src
+						.replace("img/thumb", "img/source")
+						.replace(".png.jpg", ".png");
+				image.parentNode.append(link);
+				link.append(image);
+			}
 		}
 
 		createSelectors(slideshow);
@@ -45,38 +55,7 @@ window.addEventListener('load', function() {
 //		setTargetSlide(slideFromIndex(slideshow, 0));
 	}
 
-	var images = document.getElementsByTagName("img");
-	for (var i = 0; i < images.length; i++) {
-		var image = images[i];
-		
-		var srcUrl = image.dataset.src;
-		
-		if (srcUrl) {
-			loadImage(image, function(img) {
-				img.style.filter = "unset";
-			});
-		} else {
-			image.style.filter = "unset";
-		}
-	}
 	
-	function loadImage (el, fn) {
-		var img = new Image();
-		var src = image.dataset.src;
-		img.onload = function() {
-			if (!! el.parent) {
-				el.parent.replaceChild(img, el)
-			} else {
-				el.src = src;
-			}
-
-			if (fn) {
-				fn(el);
-			}
-		}
-		img.src = src;
-	}
-
 	function createSelectors(slideshow) {
 		var selectors = document.createElement("div");
 		selectors.classList.toggle("selectors");
@@ -124,6 +103,15 @@ window.addEventListener('load', function() {
 // set the current slide, regardless of the target
 // used to style the selectors and get the slide caption
 function setCurrentSlide(slide) {
+	// dynamically load image
+	var image = slide.getElementsByTagName("img")[0];
+	if (!! image) {
+		loadImage(image, function(img) {
+			img.style.filter = "unset";
+		});
+	}
+
+	// update slideshow state
 	var slideshow = slide.parentElement.parentElement;
 
 	slideshow.caption.innerText = slide.dataset.caption;
@@ -166,6 +154,30 @@ function scrollToSlide(slide) {
 		inline: "center",
 		block: "nearest",
 	});
+}
+
+function loadImage (image, fn) {
+	var replacementSrc = image.src.replace("img/thumb", "img/400");
+	if (image.width > 800) {
+		replacementSrc = replacementSrc.replace("img/400", "img/800");
+	}
+	if (image.src == replacementSrc) {
+		return;
+	}
+
+	var replacement = new Image();
+	replacement.onload = function() {
+		if (!! image.parent) {
+			image.parent.replaceChild(replacement, image)
+		} else {
+			image.src = replacementSrc;
+		}
+
+		if (fn) {
+			fn(image);
+		}
+	}
+	replacement.src = replacementSrc;
 }
 
 function openFullscreen(elem) {
