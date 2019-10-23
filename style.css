@@ -12,7 +12,7 @@ h1 {
 
 img {
 	transition: filter 0.1s;
-	filter: blur(1em);
+	filter: blur(0.5em);
 }
 
 button {
