@@ -17,7 +17,8 @@ THUMB ?= $(addprefix img/thumb/,$(IMG))
 .PHONY: website
 website: index.html min.css js/min.js images
 
-index.html: index_source.html  
+index.html: index_source.html
+	aspell check $<
 	cp $< $@
 	sed -i "s/href=\"style.css\"/href=\"min.css\"/g" $@
 	sed -i "s/<script.*\/script>//g" $@
