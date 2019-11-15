@@ -40,19 +40,19 @@
 			<div class="container">
 				<div class="item">
 					<p>I have always been intrigued by robotics. When I was a kid, I participated in so many FIRST robotics competitions. One time we even won regionals! As such I feel like robotics, both building and programming, was a major cornerstone of my passion for technology.</p>
-					<p>In a particulary exciting job I took, I had full access to a 3D printer for the first time. I knew what I had to do. I designed up a functional (but slightly ugly) hexapod robot. It was great. So many hours of work went into it and it was my pride and joy. Then tragedy struck; I left it in a hot car and the plastic melted and deformed. But frustrating as it was, I was determined to use what I had learned to push myself and redesign. Now I have a super sleek robot that is better than ever.</p>
-					<p>The robot is controlled from a website that it hosts over it's WiFI hotspot. Live video is streamed over for a first person view. The interface uses a virtual joystick to look around and drive.</p>
+					<p>In a particularly exciting job I took, I had full access to a 3D printer for the first time. I knew what I had to do. I designed up a functional (but slightly ugly) hexapod robot. It was great. So many hours of work went into it and it was my pride and joy. Then tragedy struck; I left it in a hot car and the plastic melted and deformed. But frustrating as it was, I was determined to use what I had learned to push myself and redesign. Now I have a super sleek robot that is better than ever.</p>
+					<p>The robot is controlled from a website that it hosts over it's WiFi hotspot. Live video is streamed over for a first person view. The interface uses a virtual joystick to look around and drive.</p>
 					<p>Overall, this project was a lot of fun and a lot of work. It's been difficult making everything work perfectly. So many things have gone so wrong that it's been a major challenge to keep working on it. In fact, so many obstacles have been faced that I named it "Murphy" after Murphy's Law.</p>
 				</div>
 				<div class="item secondary">
 					<div class="slideshow">
 						<div class="slider">
 							<div class="slide"
-								data-caption="Ooh look how pretty it is. It’s purple and its name is Murphy. This is a computer render taken near the end of development.">
+								data-caption="A preview of a near-final product before 3D printing the design.">
 								<img src="img/thumb/robot/robot_render.png.jpg">
 							</div>
 							<div class="slide"
-								data-caption="Mark 2, the successor.">
+								data-caption="This is actually the second design iteration that's been fully assembled.">
 								<img src="img/thumb/robot/mark_2.jpg">
 							</div>
 							<!-- 3d view, gait animation, video -->
@@ -65,7 +65,7 @@
 								<img src="img/thumb/robot/mark_1_battery.jpg">
 							</div>
 							<div class="slide"
-								data-caption="My only regret.. is that I have... boneitis!! Don't leave PLA plastic in a hot car.">
+								data-caption="My only regret.. is that I have... Boneitis!! Don't leave PLA plastic in a hot car.">
 								<img src="img/thumb/robot/boneitis.jpg">
 							</div>
 							<div class="slide"
@@ -107,7 +107,7 @@
 			<ul class="tech">
 				<li>C</li>
 				<li>C++</li>
-				<li>Makefile</li>
+				<li>GNU Make</li>
 				<li>JSON via <a href="https://rapidjson.org/">RapidJSON</a></li>
 				<li>JavaScript</li>
 				<li>HTML</li>
@@ -118,12 +118,12 @@
 				<li><a href="https://github.com/131/h264-live-player">H.264 Video Streaming</a></li>
 				<li>WebSockets via <a href="https://github.com/uNetworking/uWebSockets">µWebSockets</a></li>
 				<li>3D Graphics via <a href="https://threejs.org/">Three.js</a></li>
-				<li>Wi-Fi Hotspot via <a href="https://en.wikipedia.org/wiki/Hostapd">hostapd</a></li>
+				<li>WiFi Hotspot via <a href="https://en.wikipedia.org/wiki/Hostapd">hostapd</a></li>
 				<li><a href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter">UART serial</a></li>
-				<li><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi</a></li>
+				<li>Raspberry Pi</li>
 				<li>3D Modeling</li>
-				<li><a href="https://flashforge-usa.com/products/new-creator-pro-dual-extrusion-3d-printer?variant=5344998326310">3D printing</a></li>
-				<li>Realtime Visualization</li>
+				<li>3D printing</li>
+				<li>Real-time Visualization</li>
 				<li><a href="https://en.wikipedia.org/wiki/Inverse_kinematics">Inverse Kinematics</a></li>
 				<li><a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bézier Curves</a></li>
 				<li><a href="https://en.wikipedia.org/wiki/Procedural_animation">Procedural Animation</a></li>
@@ -185,14 +185,12 @@
 				<li>Java</li>
 				<li>Multithreading</li>
 				<li>3D Models via <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj</a></li>
-				<li><a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">Ray Tracing</a></li>
+				<li>Ray Tracing</li>
 				<li>Textures</li>
-				<li><a href="https://en.wikipedia.org/wiki/Bump_mapping">Bump Mapping</a></li>
-				<li><a href="https://en.wikipedia.org/wiki/Volumetric_lighting">Volumetric Lighting</a></li>
-				<li><a href="https://en.wikipedia.org/wiki/Global_illumination">Global Illumination</a></li>
-				<li><a href="https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function">BRDF</a></li>
+				<li>Bump Mapping</li>
+				<li>Area Lights</li>
 				<li>Spatial Partitioning via <a href="https://en.wikipedia.org/wiki/Bounding_volume_hierarchy">BVH</a></li>
-				<li><a href="https://www.cs.uic.edu/~jbell/CourseNotes/ComputerGraphics/Coordinates.html">Coordinate Systems</a></li>
+				<li><a href="https://www.cs.uic.edu/~jbell/CourseNotes/ComputerGraphics/Coordinates.html">3D Coordinate Systems</a></li>
 			</ul>
 		</div>
 		<div id="ai" class="page">
@@ -218,21 +216,14 @@
 							<label class="digitGuess" id="guess"></label><br>
 						</div>
 					</div>
-					<p>Go ahead. Draw any number between 0 and 9.</p>
-					<p>If this was a convolutional network, the output would be more accurate</p>
-					<p>Tips:</p>
-					<ul>
-						<li>Use 90% of the available space.</li>
-						<li>Center the number in the middle</li>
-						<li>Write legibly.</li>
-					</ul>
+					<p>Draw any number between 0 and 9. The drawing is automatically centered and downscaled to fit the AI. The AI then uses it's prior training to guess the most likely digit.</p>
 				</div>
 			</div>
 			<h3>Technologies</h3>
 			<ul class="tech">
 				<li>JavaScript</li>
 				<li>Feed-Forward Neural Network</li>
-				<li>MNIST</li>
+				<li><a href="http://yann.lecun.com/exdb/mnist/">MNIST Database</a></li>
 				<li>Classification</li>
 				<li>Handwriting Recognition</li>
 			</ul>
@@ -241,10 +232,9 @@
 			<h1>Thanks for taking time to look at my portfolio.</h1>
 			<h2>Please let me know what you think!</h2>
 			<div class="item">
-				<p>Call me at <a href="tel:+1-425-412-0172">425 412 0172</a>!</p>
-				<p>Or if you prefer something a little bit more structured, my email is <a href="mailto:dombroski.christopher@gmail.com" target="_top">dombroski.christopher@gmail.com</a>.</p>
-				<p>My github is <a href="https://github.com/Nyrmburk">github.com/Nyrmburk</a>.</p>
-				<p>I am currently looking for opportunities and would appreciate contact. Invite me out to get a coffee or something. Add me on <a href="https://www.linkedin.com/in/nyrmburk/">LinkedIn</a>. Call me and chat for a bit. Do it.</p>
+				<p>Call me at <a href="tel:+1-425-412-0172">425 412 0172</a> or email at <a href="mailto:dombroski.christopher@gmail.com" target="_top">dombroski.christopher@gmail.com</a>.</p>
+				<p>To see the source code for all my projects, my GitHub is <a href="https://github.com/Nyrmburk">github.com/Nyrmburk</a>.</p>
+				<p>Invite me for coffee and add me on <a href="https://www.linkedin.com/in/nyrmburk/">LinkedIn</a>.</p>
 			</div>
 		</div>
 	</body>
